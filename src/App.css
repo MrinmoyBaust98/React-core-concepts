@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.boss-design{
+  background-color: blanchedalmond;
+  border: 2px solid brown;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 20px;
+  
+  
+}
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  
+}
