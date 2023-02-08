@@ -2,19 +2,27 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const cricketers=[
+    {name:"Sakib Al Hasan" , position:"Al-Rounder" , country:"Bangladesh"},
+    {name:"MS Dhoni"       , position:"Wick & Bat" , country:"India"     },
+    {name:"Liton Das"      , position:"Wick & Bat" , country:"Bangladesh"},
+    {name:"AB De villiers" , position:"Batsman"    , country:"SouthAfrica"},
+    {name:"Brendon McCullum",position:"Batsman"    , country:"Newzeland" },
+    {name:"Watson"         , position:"Al-Rounder" , country:"Austrilia" },
+    {name:"Dj Bravo"       , position:"Al-Rounder" , country:"Westindies"},
+    {name:"Joe root"       , position:"Batsman"    , country:"England"   },
+   ] 
   return (
+     
     <div className="App grid">
-      <Crickboss name="Sakib Al Hasan" Position="Al-Rounder" Country="Bangladesh"></Crickboss>
-      <Crickboss name="MS Dhoni" Position="Wicket&Batsman" Country="India"></Crickboss>
-      <Crickboss name="Liton Das" Position="Wicket&Batsman" Country="Bangladesh"></Crickboss>
-      <Crickboss name="Dj Bravo" Position="Al-Rounder" Country="Westindies"></Crickboss>
-      <Crickboss name="Mike Hussy" Position="Batsman" Country="Australia"></Crickboss>
-      <Crickboss name="Mark Stonis" Position="Al-Rounder" Country="Australia"></Crickboss>
-      <Crickboss name="Watson" Position="Al-Rounder" Country="Australia"></Crickboss>
-      <Crickboss name="David Warner" Position="Batsman" Country="Australia"></Crickboss>
-      <Crickboss name="AB De villiers" Position="Batsman" Country="South Africa"></Crickboss>
-      <Crickboss name="Brendon McCullum" Position="Batsman" Country="Newzeland"></Crickboss>
-      <Crickboss name="Robi Chandro Aswin" Position="Blower" Country="India"></Crickboss>
+
+      {/* Dynamically Added */}
+
+      {
+        cricketers.map(cricket =><Crickboss Name={cricket.name}Position={cricket.position} Country={cricket.country}> </Crickboss>)
+      }
+
     </div>
   );
 }
@@ -27,7 +35,7 @@ function Crickboss(props){
   }
   return (
     <div className='boss-design'>
-      <h2><span style={st}>Name: </span>{props.name}</h2>
+      <h2><span style={st}>Name: </span>{props.Name}</h2>
       <h4><span style={st}>Position: </span>{props.Position}</h4>
       <h4><span style={st}>Country: </span>{props.Country}</h4>
     </div>
